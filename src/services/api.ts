@@ -67,6 +67,24 @@ export async function apiAddSlipUp(slipUp: Omit<SlipUpRecord, 'id'> & { updateLa
   const updatedSlipUps = [newRecord, ...existing];
   localStorage.setItem('nefes_slip_ups', JSON.stringify(updatedSlipUps));
 
+  let updatedProfile: UserProfile | undefined = undefined;
+  if (slipUp.updateLastSmoked) {
+    const rawProfile = localStorage.getItem('nefes_user_profile');
+    if (rawProfile) {
+      try {
+        const prof: UserProfile = JSON.parse(rawProfile);
+        prof.lastSmokedDate = newRecord.timestamp;
+        if (newRecord.actionPlan === 'restart') {
+          prof.quitDate = newRecord.timestamp;
+        }
+        localStorage.setItem('nefes_user_profile', JSON.stringify(prof));
+        updatedProfile = prof;
+      } catch (e) {
+        console.warn('Failed to update local profile lastSmokedDate', e);
+      }
+    }
+  }
+
   try {
     const res = await fetch('/api/slip-ups', {
       method: 'POST',
@@ -81,7 +99,7 @@ export async function apiAddSlipUp(slipUp: Omit<SlipUpRecord, 'id'> & { updateLa
     console.warn('API slip-up sync error, saved locally:', err);
   }
 
-  return { slipUps: updatedSlipUps };
+  return { slipUps: updatedSlipUps, profile: updatedProfile };
 }
 
 export async function apiDeleteSlipUp(id: string): Promise<SlipUpRecord[]> {
