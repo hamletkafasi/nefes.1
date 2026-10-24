@@ -15,27 +15,21 @@ Bu proje, **GitHub Pages**, **Vercel** veya **Netlify** üzerinde sıfır sunucu
 Depoda hazır bulunan `.github/workflows/deploy.yml` GitHub Actions iş akışı sayesinde, kodunuzu GitHub'a yüklediğiniz anda siteniz otomatik olarak derlenir ve yayına alınır.
 
 #### Adım 1: Projeyi GitHub Reponuza Yükleyin
-Terminalinizde sırasıyla şu komutları çalıştırın (kendi repo linkinizle değiştirin):
+Terminalinizde sırasıyla şu komutları çalıştırın:
 
 ```bash
-# Git başlatma ve dosyaları ekleme
-git init
 git add .
-git commit -m "feat: Nefes sigara bırakma uygulaması ilk sürüm"
-
-# Ana dalı belirleme ve GitHub reponuza bağlama
-git branch -M main
-git remote add origin https://github.com/KULLANICI_ADINIZ/REPO_ADINIZ.git
-git push -u origin main
+git commit -m "fix: resolve github pages build and enable automated deploy"
+git push origin main
 ```
 
-#### Adım 2: GitHub Pages'ı Aktif Edin
-1. GitHub'da reponuzun sayfasına gidin.
-2. Üst menüden **Settings** (Ayarlar) sekmesine tıklayın.
-3. Sol menüden **Pages** bölümüne tıklayın.
-4. **Build and deployment** başlığı altında **Source** açılır kutusunu **GitHub Actions** olarak seçin.
-5. İşlem bu kadar! Üstteki **Actions** sekmesinden derleme sürecini takip edebilirsiniz. Yaklaşık 1 dakika içinde siteniz şu adreste canlıya geçer:
-   👉 `https://KULLANICI_ADINIZ.github.io/REPO_ADINIZ/`
+#### Adım 2: GitHub Pages'ı Aktif Edin (Beyaz Ekranı Önlemek İçin Kritik Adım)
+1. GitHub'da `https://github.com/hamletkafasi/nefes.1` reponuza gidin.
+2. Üstteki **Settings** (Ayarlar) sekmesine tıklayın.
+3. Sol menüdeki **Pages** bölümüne tıklayın.
+4. **Build and deployment** başlığı altındaki **Source** açılır kutusunu **"GitHub Actions"** olarak seçin (Eğer "Deploy from a branch" seçiliyse mutlaka "GitHub Actions" yapın).
+5. Üstteki **Actions** sekmesine gittiğinizde iş akışının yeşil onay (✔) alarak tamamlandığını göreceksiniz.
+6. `https://hamletkafasi.github.io/nefes.1/` adresine girip sayfayı yenilediğinizde uygulama eksiksiz ve canlı olarak açılacaktır!
 
 ---
 
