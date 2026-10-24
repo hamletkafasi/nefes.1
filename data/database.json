@@ -1,0 +1,22 @@
+{
+  "profile": {
+    "cigarettesPerDay": 20,
+    "cigarettesPerPack": 20,
+    "packPrice": 85,
+    "quitDate": "2026-10-23T10:00:00.000Z",
+    "lastSmokedDate": "2026-10-23T10:00:00.000Z",
+    "flexibleMode": "forgiving",
+    "name": "Kullanıcı",
+    "motivation": "Daha sağlıklı ve özgür bir nefes için",
+    "completedOnboarding": true
+  },
+  "slipUps": [],
+  "cravings": [],
+  "goals": [
+    { "id": "1", "title": "Özel Kahve Makinesi", "cost": 1200, "iconName": "Coffee" },
+    { "id": "2", "title": "Kablosuz Kulaklık (AirPods / ANC)", "cost": 4500, "iconName": "Headphones" },
+    { "id": "3", "title": "Akıllı Saat / Nabız Bandı", "cost": 6500, "iconName": "Watch" },
+    { "id": "4", "title": "Hafta Sonu Butik Otel Tatili", "cost": 15000, "iconName": "Palmtree" },
+    { "id": "5", "title": "Yeni Nesil Akıllı Telefon", "cost": 45000, "iconName": "Smartphone" }
+  ]
+}

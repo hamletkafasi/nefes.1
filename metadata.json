@@ -1,0 +1,6 @@
+{
+  "name": "Nefes - Sigarayı Bırakma ve Akciğer Simülasyonu",
+  "description": "Sigarayı bırakma takipçisi, bilimsel canlı akciğer simülasyonu, tasarruf ve sağlık kilometre taşları.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
